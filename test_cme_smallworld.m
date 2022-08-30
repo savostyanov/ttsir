@@ -1,3 +1,5 @@
+check_tt;
+
 global swprob
 
 swprob = parse_parameter('probability of rewiring', 0.03);
@@ -105,4 +107,5 @@ if (Icritical<=0)
 end
 
 figure(1); plot(tfix, outputs);
-
+xlabel('t');
+title('output statistics')

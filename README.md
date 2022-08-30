@@ -13,6 +13,14 @@ Each script will check for [TT-Toolbox](https://github.com/oseledets/TT-Toolbox)
 
 `test_cme_sir.m` uses `tamen` with adaptive discretization in time. This requires compressing several snapshots of the probability distribution function in the same TT decomposition, as explained in Section 3.3 of the paper. However, this may increase the error in the output statistics for very high dimensions, as explained in Section 5. To alleviate this issue, `test_cme_smallworld.m` uses an implicit Euler discretization with a reasonably fine time step (0.01), which requires storing only one snapshot of the solution at a time. This reduces the TT ranks and the TT approximation error. The linear system of the implicit Euler scheme is solved via `amen_solve` from the tAMEn package.
 
+### Outputs
+
+Both scripts can compute and plot the following statistics of interest:
+ - mean and standard deviation of the total number of infected individuals. Note that both TT and SSA methods compute initially the mean and the second moment of the number of infected individuals. However, in the end of the `test_cme_sir.m` and `test_cme_smallworld.m` scripts the second moment is replaced by the standard deviation.
+ - Exceedance probability. For convenience of reproducing the experiments in the paper, both methods compute P(I > Icritical-1) and P(I > Icritical+1).
+ - Mean total number of susceptible individuals.
+
+
 ## Method files
 
 Each file starts with a description of its purpose, inputs and outputs. Type e.g. `help tt_cme_sir` or open the file in the editor.

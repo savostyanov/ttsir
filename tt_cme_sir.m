@@ -118,7 +118,7 @@ for i=1:numel(iadj)
     A{1,end+1} = tt_tensor(Ai);
 end
 
-A = amen_sum(A, ones(numel(A),1), atol, 'y0', tt_tensor(tt_eye(3,d)), 'nswp', opts.nswp_w, 'kickrank', opts.kickrank_w);
+A = amen_sum(A, ones(numel(A),1), atol, 'y0', tt_tensor(tt_eye(3,d)), 'nswp', opts.nswp, 'kickrank', opts.kickrank);
 A = tt_matrix(A);
 A = core2cell(A);
 
@@ -224,6 +224,8 @@ else
             outputs(m+1,j) = dot(outs{j}, u); % /norm_u(m+1); 
         end
         figure(1); plot(tfix(2:m+1), outputs(2:m+1,:));
+        xlabel('t');
+        title('output statistics')        
 
         opts.nswp = 1;        
         

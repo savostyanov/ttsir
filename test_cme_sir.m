@@ -1,4 +1,5 @@
 % function [outputs, ttimes_tt_full] = test_cme_sir(beta_var)
+check_tt;
 
 beta_var = [1 1 1];
 d = parse_parameter('dimension', 9);
@@ -188,5 +189,7 @@ if (Icritical<=0)
     outputs(:,2:2:end) = sqrt(abs(outputs(:,2:2:end) - outputs(:,1:2:end-1).^2));
 end 
 figure(1); plot(tfix, outputs);
+xlabel('t');
+title('output statistics')
 
 % end
