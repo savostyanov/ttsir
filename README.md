@@ -1,6 +1,6 @@
 # TT-SIR
 
-Matlab codes implementing the algorithms and numerical examples from [[Dolgov, Savostyanov, _Tensor product approach to modelling epidemics on networks_, arXiv:](http://arxiv.org/)].
+Matlab codes implementing the algorithms and numerical examples from [Dolgov, Savostyanov, [Tensor product approach to modelling epidemics on networks](https://doi.org/10.1016/j.amc.2023.128290), _Applied Mathematics and Computation_ 460, 128290, 2024].
 
 ## Main files
 
